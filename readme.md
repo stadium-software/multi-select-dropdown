@@ -27,6 +27,8 @@ https://github.com/stadium-software/multi-select-dropdown/assets/2085324/6f5507d
 [{"text":"Item1","value":"Item1"},{"text":"Item2","value":"Item2"},{"text":"Item3","value":"Item3"},{"text":"Item4","value":"Item4"}]
 ```
 
+!()[images/Multi-Select.png]
+
 ## Page.Load Event Handler
 
 1. Drag a Javascript action into the Page.Load event handler

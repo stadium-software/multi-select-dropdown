@@ -2,9 +2,7 @@
 
 The multi-select dropdown is essentially a checkbox list that is displayed in a dropdown-like way. It is useful when you want to allow users to select from a checkbox list, but don't have the space to display the entire list
 
-
-https://github.com/stadium-software/multi-select-dropdown/assets/2085324/6f5507d3-21c3-4f29-991a-07b504b10a49
-
+https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5a-bf6e-4028-a8b9-4e94b2745792
 
 ## Version
 1.0

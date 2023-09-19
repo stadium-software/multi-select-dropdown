@@ -17,10 +17,11 @@ https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5
 1. Drag a *Container* control to a page and call it "MultiSelectDropDownContainer"
 2. Add the class "multi-select-dropdown-container" to the classes property
 3. Drag a *Label* control into the container and call it "MultiSelectDropDownHeader"
-4. Add the class "multi-select-dropdown-header" to the classes property
-5. Drag a *CheckboxList* control into the container, place it under the label control and call it "MultiSelectDropDownCheckBoxList"
-6. Add the class "multi-select-checkboxlist" to the classes property
-7. Paste the array below into the *Options* property to create some sample items
+4. Add "Filter" into the *Text* property of the "MultiSelectDropDownHeader" control
+5. Add the class "multi-select-dropdown-header" to the classes property
+6. Drag a *CheckboxList* control into the container, place it under the label control and call it "MultiSelectDropDownCheckBoxList"
+7. Add the class "multi-select-checkboxlist" to the classes property
+8. Paste the array below into the *Options* property to create some sample items
 ```
 [{"text":"Item1","value":"Item1"},{"text":"Item2","value":"Item2"},{"text":"Item3","value":"Item3"},{"text":"Item4","value":"Item4"}]
 ```

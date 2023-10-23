@@ -22,7 +22,7 @@ https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5
 6. Drag a *CheckboxList* control into the container, place it under the label control and call it "MultiSelectDropDownCheckBoxList"
 7. Add the class "multi-select-checkboxlist" to the classes property
 8. Paste the array below into the *Options* property to create some sample items
-```
+```json
 [{"text":"Item1","value":"Item1"},{"text":"Item2","value":"Item2"},{"text":"Item3","value":"Item3"},{"text":"Item4","value":"Item4"}]
 ```
 
@@ -32,7 +32,7 @@ https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5
 
 1. Drag a Javascript action into the Page.Load event handler
 2. Copy the Javascript below into the *code* property of the action
-```
+```javascript
 document.querySelector(".multi-select-dropdown-header").addEventListener("click", function(e){
 	e.target.closest(".multi-select-dropdown-container").classList.toggle("expand");
 });
@@ -58,7 +58,7 @@ How to apply the CSS to your application
 
 #### Stadium 6 (versions 6.6 and above)
 1. Paste the link tags below into the *head* property of your application
-```
+```html
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select.css">
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select-variables.css">
 ``` 

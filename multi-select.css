@@ -19,6 +19,7 @@
         display: block;
         cursor: pointer;
         user-select: none;
+        padding: 0 26px 6px 6px;
     }
     & .stadium-multi-select-dropdown-header:after {
         content: "\00BB";

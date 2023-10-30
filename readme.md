@@ -4,6 +4,10 @@ The multi-select dropdown is essentially a checkbox list that is displayed in a 
 
 https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5a-bf6e-4028-a8b9-4e94b2745792
 
+## Sample applications
+This repo contains one Stadium 6.7 application
+[CollapsibleCheckBoxList.sapz](Stadium6/CollapsibleCheckBoxList.sapz?raw=true)
+
 ## Version
 1.1 
 

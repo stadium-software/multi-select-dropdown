@@ -6,7 +6,7 @@ https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5
 
 ## Sample applications
 This repo contains one Stadium 6.7 application
-[CollapsibleCheckBoxList.sapz](Stadium6/CollapsibleCheckBoxList.sapz?raw=true)
+[MultiSelectDropDown.sapz](Stadium6/MultiSelectDropDown.sapz?raw=true)
 
 ## Version
 1.1 Simplified setup requirements; Enhanced script to detect invalid parameter values

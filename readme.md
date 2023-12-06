@@ -9,11 +9,9 @@ This repo contains one Stadium 6.7 application
 [CollapsibleCheckBoxList.sapz](Stadium6/CollapsibleCheckBoxList.sapz?raw=true)
 
 ## Version
-1.1 
+1.1 Simplified setup requirements; Enhanced script to detect invalid parameter values
 
-**Changes**
-1. Simplified setup requirements
-2. Enhanced script to detect invalid parameter values
+1.2 Fixed requiredFieldValidator bug (JS & CSS)
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -25,7 +23,7 @@ This repo contains one Stadium 6.7 application
    1. CheckBoxListClass
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.1 */
+/* Stadium Script Version 1.2 */
 let className = "." + ~.Parameters.Input.CheckBoxListClass;
 let clist = document.querySelectorAll(className);
 if (clist.length == 0) {
@@ -41,16 +39,15 @@ let header = document.createElement("div");
 header.textContent = "Select";
 header.classList.add("stadium-multi-select-dropdown-header", "control-container");
 header.addEventListener("click", function (e) {
-    e.target.closest(".stadium-multi-select-dropdown").classList.toggle("expand");
+    e.target.closest(".check-box-list-container").classList.toggle("expand");
 });
 let clistItems = clist.querySelectorAll("div")[0];
 clistItems.classList.add("stadium-multi-select-checkboxlist");
 clistItems.before(header);
 
 document.body.addEventListener("click", function (e) {
-    console.log(e.target.closest(".stadium-multi-select-dropdown"));
-    if (!e.target.closest(".stadium-multi-select-dropdown")) {
-        let allDD = document.querySelectorAll(".stadium-multi-select-dropdown");
+    if (!e.target.closest(".check-box-list-container")) {
+        let allDD = document.querySelectorAll(".check-box-list-container:has(.stadium-multi-select-checkboxlist)");
         for (let i = 0; i < allDD.length; i++) {
             allDD[i].classList.remove("expand");
         }

@@ -1,3 +1,4 @@
+/* CSS version 1.0 https: //github.com/stadium-software/multi-select-dropdown */
 .check-box-list-container:has(.stadium-multi-select-checkboxlist) {
 	border: 1px solid var(--multi-select-container-border-color);
 	position: relative;

@@ -23,7 +23,7 @@ This repo contains one Stadium 6.7 application
    1. CheckBoxListClass
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.2 */
+/* Stadium Script Version 1.2 https://github.com/stadium-software/multi-select-dropdown */
 let className = "." + ~.Parameters.Input.CheckBoxListClass;
 let clist = document.querySelectorAll(className);
 if (clist.length == 0) {

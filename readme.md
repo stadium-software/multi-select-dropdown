@@ -5,7 +5,7 @@ The multi-select dropdown is essentially a checkbox list that is displayed in a 
 https://github.com/stadium-software/multi-select-dropdown/assets/2085324/dff8cb5a-bf6e-4028-a8b9-4e94b2745792
 
 ## Version
-Current version 1.3
+Current version 1.3.1
 
 1.1 Simplified setup requirements; Enhanced script to detect invalid parameter values
 

@@ -52,16 +52,16 @@ document.body.addEventListener("click", function (e) {
 2. Add a class to the classes property of the "MultiSelectDropDownCheckBoxList" control to uniquely identiy the *CheckBoxList* on this page (e.g. "multi-select-checkboxlist")
 3. Paste the example array below into the *Options* property of the "MultiSelectDropDownCheckBoxList" control to create some sample items (you can populate the checkbox list from any datasource)
 ```json
-[{"text":"Item1","value":"Item1"},{"text":"Item2","value":"Item2"},{"text":"Item3","value":"Item3"},{"text":"Item4","value":"Item4"}]
+[
+    {"text":"Item1","value":"Item1"},
+    {"text":"Item2","value":"Item2"},
+    {"text":"Item3","value":"Item3"},
+    {"text":"Item4","value":"Item4"}
+]
 ```
 
 ## Page.Load Setup
 1. Drag the "MultiSelectDropDown" global script into the load event handler
-
-## Customising the multi-select dropdown
-The *multi-select-variables.css* file included in this repo contains a set of variables that can be changed to customise the multi-select multi-select dropdown. Follow the steps below to create a custom multi-select dropdown implementation 
-1. Open the CSS file called [*multi-select-variables.css*](multi-select-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
-2. Adjust the variables in the *:root* element as you see fit
 
 ## CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*multi-select-variables.css*](multi-select-variables.css) file can be [customised](#customising-css).

@@ -15,6 +15,8 @@ Current version 1.3.1
 
 1.3.1 Upgraded readme to 6.12+; fixed border display bug; converted px to rem
 
+1.4 Integrated CSS with script
+
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
@@ -23,7 +25,8 @@ Current version 1.3.1
 1. Create a Global Script and call it "MultiSelectDropDown"
 2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.3 https://github.com/stadium-software/multi-select-dropdown/ */
+/* Stadium Script Version 1.4 https://github.com/stadium-software/multi-select-dropdown/ */
+loadCSS();
 let clists = document.querySelectorAll(".multi-select-dropdown");
 for (let i = 0; i < clists.length; i++) {
     let clist = clists[i];
@@ -37,6 +40,70 @@ for (let i = 0; i < clists.length; i++) {
     let clistItems = clist.querySelectorAll("div")[0];
     clistItems.classList.add("stadium-multi-select-checkboxlist");
     clistItems.before(header);
+}
+function loadCSS() {
+    let moduleID = "stadium-multi-select-dropdown";
+    if (!document.getElementById(moduleID)) {
+        let cssMain = document.createElement("style");
+        cssMain.id = moduleID;
+        cssMain.type = "text/css";
+        cssMain.textContent = `
+/* CSS version 1.0 https: //github.com/stadium-software/multi-select-dropdown */
+.check-box-list-container:has(.stadium-multi-select-checkboxlist) {
+	border: 0.1rem solid var(--multi-select-container-border-color, var(--BUTTON-BORDER-COLOR));
+	position: relative;
+	background-color: var(--multi-select-background-color, var(--CHECK-BOX-LIST-CONTAINER-BACKGROUND-COLOR));
+
+    &:after {
+        top: 0;
+        right: 0;
+    }
+
+    .stadium-multi-select-checkboxlist {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        top: 3.3rem;
+        left: -0.1rem;
+        border: 0.1rem solid var(--multi-select-container-border-color, var(--BUTTON-BORDER-COLOR));
+        > div {
+            box-shadow: rgba(0, 0, 0, 0.07) 0 0.1rem 0.1rem, rgba(0, 0, 0, 0.07) 0 0.2rem 0.2rem, rgba(0, 0, 0, 0.07) 0 0.4rem 0.4rem, rgba(0, 0, 0, 0.07) 0 0.8rem 0.8rem, rgba(0, 0, 0, 0.07) 0 1.6rem 1.6rem;
+            background-color: var(--multi-select-background-color, var(--CHECK-BOX-LIST-CONTAINER-BACKGROUND-COLOR));
+        }
+    }
+    .stadium-multi-select-dropdown-header {
+        display: block;
+        cursor: pointer;
+        user-select: none;
+        padding: 0 2.6rem var(--multi-select-container-padding, 0.6rem) var(--multi-select-container-padding, 0.6rem);
+    }
+    .stadium-multi-select-dropdown-header:after {
+        content: "\\00BB";
+        position: absolute;
+        padding-left: 0.4rem;
+        font-size: 2.2rem;
+        height: 2rem;
+        width: 2rem;
+        transform: rotate(90deg);
+        transform-origin: 67% 76%;
+        transition: transform .1s;
+    }
+}
+.check-box-list-container.expand:has(.stadium-multi-select-checkboxlist) {
+    .stadium-multi-select-checkboxlist {
+        display: block;
+    }
+    .multi-select-dropdown-header:after {
+        transform: rotate(270deg) translate(0.8rem,-0.3rem);
+    }
+}
+html {
+    min-height: 100%;
+    font-size: 62.5%;
+}        
+        `;
+        document.head.appendChild(cssMain);
+    }
 }
 document.body.addEventListener("click", function (e) {
     if (!e.target.closest(".check-box-list-container")) {
@@ -64,24 +131,7 @@ document.body.addEventListener("click", function (e) {
 1. Drag the "MultiSelectDropDown" global script into the load event handler
 
 ## CSS
-The CSS below is required for the correct functioning of the module. Variables exposed in the [*multi-select-variables.css*](multi-select-variables.css) file can be [customised](#customising-css).
-
-### Before v6.12
-1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the two CSS files from this repo [*multi-select-variables.css*](multi-select-variables.css) and [*multi-select.css*](multi-select.css) into that folder
-3. Paste the link tags below into the *head* property of your application
-```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select.css">
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select-variables.css">
-``` 
-
-### v6.12+
-1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the CSS files from this repo [*multi-select.css*](multi-select.css) into that folder
-3. Paste the link tag below into the *head* property of your application
-```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select.css">
-``` 
+Variables exposed in the [*multi-select-variables.css*](multi-select-variables.css) file can be [customised](#customising-css).
 
 ### Customising CSS
 1. Open the CSS file called [*multi-select-variables.css*](multi-select-variables.css) from this repo
@@ -93,8 +143,6 @@ The CSS below is required for the correct functioning of the module. Variables e
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/multi-select-variables.css">
 ``` 
 6. Add the file to the "CSS" inside of your Embedded Files in your application
-
-**NOTE: Do not change any of the CSS in the 'multi-select.css' file**
 
 ## Upgrading Stadium Repos
 Stadium Repos are not static. They change as additional features are added and bugs are fixed. Using the right method to work with Stadium Repos allows for upgrading them in a controlled manner. 
